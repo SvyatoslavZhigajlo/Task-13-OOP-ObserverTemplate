@@ -36,20 +36,24 @@ public class Human {
         final LocalDateTime birthTime = LocalDateTime.now();
 
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onBirth(birthTime, gender, 54, 4.2, "Харьков");
+                observer.onBirth(new IHumanLifecycleObserver.
+                        OnBirthParam(birthTime, gender, 54, 4.2, "Харьков"));
+//            observer.onBirthParam(birthTime, gender, 54, 4.2, "Харьков");
         }
     }
 
     private void doKindergarten() {
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onKindergarten("4", 163);
+            observer.onKindergarten(new IHumanLifecycleObserver.OnKindergarten("4", 163));
+//            observer.onKindergarten("4", 163);
         }
     }
 
     private void doSchool() {
         final int age = 6;
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onSchool(age, "1A");
+            observer.onSchool(new IHumanLifecycleObserver.OnSchool(age, "1A"));
+//            observer.onSchool(age, "1A");
         }
     }
 
@@ -58,7 +62,9 @@ public class Human {
         final LocalDateTime startSchoolProm = LocalDateTime.of(2021, 6, 30, 18, 0);
         final String address = "г.Харьков, пл. Свободы, 1";
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onSchoolProm(schoolCertificate, startSchoolProm, address);
+            observer.onSchoolProm(new IHumanLifecycleObserver
+                    .OnSchoolProm(schoolCertificate, startSchoolProm, address));
+//            observer.onSchoolProm(schoolCertificate, startSchoolProm, address);
         }
 
     }
@@ -68,7 +74,8 @@ public class Human {
         final String nameUniversity = "ХИФ УГУФМТ";
         final LocalDate startEducation = LocalDate.of(2021, 9, 1);
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onUniversity(rating, nameUniversity, startEducation);
+            observer.onUniversity(new IHumanLifecycleObserver.OnUniversity(rating, nameUniversity, startEducation));
+//            observer.onUniversity(rating, nameUniversity, startEducation);
         }
     }
 
@@ -84,7 +91,9 @@ public class Human {
             secondHalf = "Олег";
         }
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onFamily(gender, weddingDate, address, nameRestaurant, secondHalf);
+            observer.onFamily(new IHumanLifecycleObserver.OnFamily(gender, weddingDate,
+                    address, nameRestaurant, secondHalf));
+//            observer.onFamily(gender, weddingDate, address, nameRestaurant, secondHalf);
         }
     }
 
@@ -95,7 +104,8 @@ public class Human {
         final float weight = 4.34f;
 
         for (IHumanLifecycleObserver observer : observers) {
-            observer.onMyChild(gender, dateOfBirthMyChild, height, weight);
+            observer.onMyChild(new IHumanLifecycleObserver.OnMyChild(gender, dateOfBirthMyChild, height, weight));
+//            observer.onMyChild(gender, dateOfBirthMyChild, height, weight);
         }
     }
 
@@ -104,7 +114,8 @@ public class Human {
         final LocalDateTime dateDeath = LocalDateTime.of(2098,1, 19, 1, 40);
 
         for (IHumanLifecycleObserver observer: observers){
-            observer.onDeath(yesOrNot,dateDeath);
+            observer.onDeath(new IHumanLifecycleObserver.OnDeath(yesOrNot,dateDeath));
+//            observer.onDeath(yesOrNot,dateDeath);
         }
     }
 

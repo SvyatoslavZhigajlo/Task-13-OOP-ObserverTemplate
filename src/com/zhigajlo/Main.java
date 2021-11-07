@@ -15,5 +15,47 @@ public class Main {
 //                new GrandMother()
         });
         human.life();
+
+        IHumanLifecycleObserver humanLifecycleObserver = new IHumanLifecycleObserver() {
+            @Override
+            public void onBirth(OnBirthParam param) {
+
+            }
+
+            @Override
+            public void onKindergarten(OnKindergarten parameters) {
+
+            }
+
+            @Override
+            public void onSchool(OnSchool parameters) {
+
+            }
+
+            @Override
+            public void onSchoolProm(OnSchoolProm parameters) {
+
+            }
+
+            @Override
+            public void onUniversity(OnUniversity parameters) {
+
+            }
+
+            @Override
+            public void onFamily(OnFamily parameters) {
+
+            }
+
+            @Override
+            public void onMyChild(OnMyChild parameters) {
+
+            }
+
+            @Override
+            public void onDeath(OnDeath parameters) {
+
+            }
+        };
     }
 }
